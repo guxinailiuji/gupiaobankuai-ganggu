@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>港股行业板块与重要成分股</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white text-gray-800 font-geist antialiased">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold mb-2 text-black">港股行业板块与重要成分股 by不霁何虹</h1>
+            <p class="text-gray-600">依据恒生行业分类系统 (HSICS) 分类的港股主要行业板块及其重要成分股一览</p>
+        </header>
+        
+        <div class="grid grid-cols-1 gap-5 mb-10">
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-black">
+                    <i class="sector-icon" data-lucide="bar-chart-4"></i>
+                    <span class="ml-2">港股行业概览</span>
+                </h2>
+                <p class="mb-4">香港股市涵盖多个行业板块，主要由恒生行业分类系统将港股分为12大行业。目前香港股市既包括金融业、地产业等传统行业，也包括医疗、科技、传媒和电信等新经济行业。香港交易所的行业分类主要依据恒生行业分类系统。</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-4">
+                    <a href="#energy" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-blue-500 mr-3"></div>
+                            <span class="font-medium">能源业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括石油石化、煤炭等传统能源公司及新兴可再生能源企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 中国石油化工、中国海洋石油、龙源电力</div>
+                    </a>
+                    <a href="#materials" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-yellow-500 mr-3"></div>
+                            <span class="font-medium">原材料业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括采矿、冶金等基础材料生产企业，是工业生产基础</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 紫金矿业、中国宏桥、中国铝业</div>
+                    </a>
+                    <a href="#industrials" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-green-500 mr-3"></div>
+                            <span class="font-medium">工业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括运输、机械制造、航空航天、国防等工业综合企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 中国中车、中国铁建、中国交通建设</div>
+                    </a>
+                    <a href="#consumer-discretionary" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-purple-500 mr-3"></div>
+                            <span class="font-medium">非必需性消费</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括汽车、耐用消费品、服装、酒店、餐馆、娱乐等</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 比亚迪、美团、理想汽车</div>
+                    </a>
+                    <a href="#consumer-staples" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-orange-500 mr-3"></div>
+                            <span class="font-medium">必需性消费</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括食品饮料、家庭日用品、个人护理用品等必需品制造商</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 蒙牛乳业、农夫山泉、华润啤酒</div>
+                    </a>
+                    <a href="#healthcare" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-red-500 mr-3"></div>
+                            <span class="font-medium">医疗保健业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括医疗器械、药品研发生产、医疗服务提供商等</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 药明生物、复星医药、华润医药</div>
+                    </a>
+                    <a href="#financials" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-indigo-500 mr-3"></div>
+                            <span class="font-medium">金融业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括银行、保险、投资服务等金融类企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 中国工商银行、中国平安、香港交易所</div>
+                    </a>
+                    <a href="#properties" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-pink-500 mr-3"></div>
+                            <span class="font-medium">地产建筑业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括房地产开发商、运营商及建筑企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 新鸿基地产、恒基地产、长实集团</div>
+                    </a>
+                    <a href="#it" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-cyan-500 mr-3"></div>
+                            <span class="font-medium">资讯科技业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括软件、硬件、互联网服务、云计算、AI等科技企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 腾讯控股、阿里巴巴、京东集团</div>
+                    </a>
+                    <a href="#telecom" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-teal-500 mr-3"></div>
+                            <span class="font-medium">电讯业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括电信运营商、设备制造商等通信类企业</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 中国移动、中国电信、中国联通</div>
+                    </a>
+                    <a href="#utilities" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-gray-500 mr-3"></div>
+                            <span class="font-medium">公用事业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">包括电力、燃气、水务等公共服务提供商</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 中电控股、港灯电力、中华煤气</div>
+                    </a>
+                    <a href="#conglomerates" class="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-all">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 rounded-full bg-amber-500 mr-3"></div>
+                            <span class="font-medium">综合企业</span>
+                        </div>
+                        <p class="text-sm text-gray-600">跨多个行业经营的多元化企业集团</p>
+                        <div class="text-xs text-gray-500 mt-2">代表股: 长江和记、中信股份、中国中信</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <section id="sectors-container" class="grid grid-cols-1 gap-8">
+            <!-- 能源业 -->
+            <div id="energy" class="sector-card flash-effect" data-sector="energy">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container energy-icon">
+                                    <i data-lucide="flame" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                能源业 (Energy)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生综合行业指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">能源业包括石油石化和煤炭等传统能源公司，以及新兴的可再生能源公司。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国石油化工股份</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0386.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国神华</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1088.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国海洋石油</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0883.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">红筹股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国石油股份</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0857.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">龙源电力</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0916.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">新能源</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">新天绿色能源</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0956.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">新能源</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 原材料业 -->
+            <div id="materials" class="sector-card flash-effect" data-sector="materials">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container materials-icon">
+                                    <i data-lucide="layers" class="w-5 h-5 text-yellow-600"></i>
+                                </div>
+                                原材料业 (Materials)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通原材料及工业指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">原材料业包括采矿、冶金及其他基础材料生产企业，是工业生产的基础。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">比重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">紫金矿业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2899.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8.81%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国宏桥</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1378.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3.75%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">招金矿业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1818.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.09%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">洛阳钼业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3993.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.07%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国铝业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2600.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.90%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">江西铜业股份</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0358.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.44%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">东岳集团</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0189.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.33%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工业 -->
+            <div id="industrials" class="sector-card flash-effect" data-sector="industrials">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container industrials-icon">
+                                    <i data-lucide="factory" class="w-5 h-5 text-green-600"></i>
+                                </div>
+                                工业 (Industrials)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通原材料及工业指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">工业板块包括运输、机械制造、航空航天、国防及工业综合企业。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国中车</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1766.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国铁建</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1186.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国交通建设</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1800.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国铁路通信信号</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3969.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">H股</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 非必需性消费 -->
+            <div id="consumer-discretionary" class="sector-card flash-effect" data-sector="consumer-discretionary">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container consumer-discretionary-icon">
+                                    <i data-lucide="shopping-bag" class="w-5 h-5 text-purple-600"></i>
+                                </div>
+                                非必需性消费 (Consumer Discretionary)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通非必需性消费指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">非必需性消费行业包括汽车、耐用消费品、服装、酒店、餐馆、娱乐等。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">比重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">比亚迪股份</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1211.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12.91%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">美团-W</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3690.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8.92%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">创科实业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0669.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.37%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">理想汽车-W</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2015.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.12%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">快手-W</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1024.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5.80%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">百胜中国</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9987.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5.54%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">小鹏汽车-W</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9868.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.86%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">安踏体育</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2020.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.66%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 必需性消费 -->
+            <div id="consumer-staples" class="sector-card flash-effect" data-sector="consumer-staples">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container consumer-staples-icon">
+                                    <i data-lucide="shopping-cart" class="w-5 h-5 text-orange-600"></i>
+                                </div>
+                                必需性消费 (Consumer Staples)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通必需性消费指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">必需性消费行业包括食品饮料、家庭日用品、个人护理用品等必需品制造商。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">比重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">蒙牛乳业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2319.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10.11%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">万洲国际</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0288.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10.09%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">农夫山泉</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9633.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9.70%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">华润啤酒</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0291.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9.23%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">青岛啤酒股份</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0168.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8.96%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国飞鹤</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6186.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.34%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">康师傅控股</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0322.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.17%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 医疗保健业 -->
+            <div id="healthcare" class="sector-card flash-effect" data-sector="healthcare">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container healthcare-icon">
+                                    <i data-lucide="heart-pulse" class="w-5 h-5 text-red-600"></i>
+                                </div>
+                                医疗保健业 (Health Care)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通医疗保健指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">医疗保健业包括生物医药、医疗器械、医疗服务等相关企业。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">比重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">百济神州</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6160.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12.04%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">药明生物</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2269.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">11.05%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">信达生物</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1801.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.82%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">康方生物</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9926.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">石药集团</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1093.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5.10%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">京东健康</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6618.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.97%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国生物制药</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1177.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.38%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 金融业 -->
+            <div id="financials" class="sector-card flash-effect" data-sector="financials">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container financials-icon">
+                                    <i data-lucide="landmark" class="w-5 h-5 text-indigo-600"></i>
+                                </div>
+                                金融业 (Financials)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生指数成分股</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">金融业包括银行、保险、证券、资产管理等金融服务企业。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">汇丰控股</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00005.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">银行</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">恒生银行</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00011.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">银行</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">友邦保险</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">01299.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">保险</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国平安</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">02318.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">保险</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国人寿</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">02628.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">保险</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">建设银行</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00939.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">银行</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">工商银行</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">01398.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">银行</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 地产建筑业 -->
+            <div id="properties" class="sector-card flash-effect" data-sector="properties">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container properties-icon">
+                                    <i data-lucide="building" class="w-5 h-5 text-pink-600"></i>
+                                </div>
+                                地产建筑业 (Properties & Construction)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生港股通地产建筑业指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">地产建筑业包括房地产开发商、建筑企业和物业管理公司。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">比重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">华润置地</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1109.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10.69%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">新鸿基地产</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0016.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9.34%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">长实集团</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1113.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8.33%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国海外发展</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0688.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.07%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">九龙仓置业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1997.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.34%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">恒基地产</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0012.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3.95%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 资讯科技业 -->
+            <div id="it" class="sector-card flash-effect" data-sector="it">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container it-icon">
+                                    <i data-lucide="cpu" class="w-5 h-5 text-cyan-600"></i>
+                                </div>
+                                资讯科技业 (Information Technology)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生科技指数 & 恒生港股通资讯科技业指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">资讯科技业包括软件、硬件、半导体、互联网服务等科技企业。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">腾讯控股</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0700.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">互联网</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">阿里巴巴-SW</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9988.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">互联网</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">小米集团-W</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1810.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">硬件</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">京东集团-SW</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9618.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">互联网</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">网易-S</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9999.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">互联网</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">百度集团-SW</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9888.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">互联网</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中芯国际</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0981.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">半导体</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 电讯业 -->
+            <div id="telecom" class="sector-card flash-effect" data-sector="telecom">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container telecom-icon">
+                                    <i data-lucide="wifi" class="w-5 h-5 text-teal-600"></i>
+                                </div>
+                                电讯业 (Telecommunications)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 国新港股通央企红利指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">电讯业包括电信运营商、网络服务提供商等通讯相关企业。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国移动</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0941.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电信运营</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国电信</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0728.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电信运营</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中国联通</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0762.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电信运营</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公用事业 -->
+            <div id="utilities" class="sector-card flash-effect" data-sector="utilities">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container utilities-icon">
+                                    <i data-lucide="lightbulb" class="w-5 h-5 text-gray-600"></i>
+                                </div>
+                                公用事业 (Utilities)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生公用事业分类指数</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">公用事业包括电力、燃气、水务等公共服务提供商。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">中电控股</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00002.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电力</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">香港中华煤气</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00003.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">燃气</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">电能实业</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00006.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电力</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">华润电力</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00836.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">电力</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">长江基建集团</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">01038.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">基建</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">新奥能源</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">02688.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">燃气</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 综合企业 -->
+            <div id="conglomerates" class="sector-card flash-effect" data-sector="conglomerates">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-black flex items-center">
+                                <div class="sector-icon-container conglomerates-icon">
+                                    <i data-lucide="briefcase" class="w-5 h-5 text-amber-600"></i>
+                                </div>
+                                综合企业 (Conglomerates)
+                            </h2>
+                            <span class="text-sm text-gray-500">数据来源: 恒生指数成分股</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">综合企业是指在多个不同行业领域都有业务的多元化企业集团。</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票名称</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">股票代码</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">长和</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">00001.HK</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">综合控股</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="mt-16 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+            <p>数据来源: 恒生指数有限公司 &middot; 仅供参考，投资有风险</p>
+            <p class="mt-2">
+                反关财经 <a href="https://flowith.net" target="_blank" class="text-black hover:underline">by 不霁何虹</a>.
+            </p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("wheel", (e)=> {
+            const isPinching = e.ctrlKey
+            if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+</body>
+</html>
